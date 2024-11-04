@@ -30,7 +30,7 @@ namespace MeasureLengthDeviceNamespace
         /// Converts the raw data collected by the measuring device into an imperial value.
         /// </summary>
         ///<returns>The latest measurement from the device converted to imperial units.</returns>
-        public decimal ImperialValue() => (unitsToUse.Equals(Units.Metric)) ? mostRecentMeasure : mostRecentMeasure * 0.03937m;
+        public decimal ImperialValue() => (unitsToUse.Equals(Units.Imperial)) ? mostRecentMeasure : mostRecentMeasure * 0.03937m;
         /// <summary>
         /// Starts the measuring device.
         /// </summary>
@@ -54,10 +54,7 @@ namespace MeasureLengthDeviceNamespace
         /// Enables access to the raw data from the device in whatever units are native to the device
         /// </summary>
         /// <returns>The raw data from the device in native format.</returns>
-        public int[] GetRawData()
-        {
-            return dataCaptured;
-        }
+        public int[] GetRawData() => dataCaptured;
         /// <summary>
         /// Что то делает(я просто скопировал функцию из методы)
         /// </summary>
