@@ -19,7 +19,7 @@ namespace _5._1
         /// <param name="e"></param>
         private void createInstance_Click(object sender, RoutedEventArgs e)
         {
-            device = new MeasureLengthDevice(unit);
+            device = new MeasureMassDevice(unit);
             logs.Content = "Device created";
         }
         /// <summary>
