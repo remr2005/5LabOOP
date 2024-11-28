@@ -8,8 +8,8 @@
             var seller = new Seller("John Doe", "john@example.com");
 
             // Создание товаров
-            var product1 = new Product("Laptop", seller, 1500.00m, "High-end gaming laptop.");
-            var product2 = new Product("Smartphone", seller, 800.00m, "Latest model smartphone.");
+            var product1 = new Product("Ноутбук", seller, 1500.00m, "Топ амд амд");
+            var product2 = new Product("Хуавей", seller, 800.00m, "Топ китай партия китай партия");
 
             // Добавление товаров к продавцу
             seller.AddProduct(product1);
