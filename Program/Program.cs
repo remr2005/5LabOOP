@@ -4,18 +4,30 @@
     {
         static void Main(string[] args)
         {
-            Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 10.99m, "1234567890");
-            Book book2 = new Book("1984", "George Orwell", 8.99m, "0987654321");
+            // Создание продавца
+            var seller = new Seller("John Doe", "john@example.com");
 
-            Customer customer = new Customer("John Doe", "john.doe@example.com");
-            customer.AddToCart(book1);
-            customer.AddToCart(book2);
+            // Создание товаров
+            var product1 = new Product("Laptop", seller, 1500.00m, "High-end gaming laptop.");
+            var product2 = new Product("Smartphone", seller, 800.00m, "Latest model smartphone.");
 
-            decimal total = customer.Checkout();
-            Console.WriteLine($"Общая сумма к оплате: {total:C}");
+            // Добавление товаров к продавцу
+            seller.AddProduct(product1);
+            seller.AddProduct(product2);
 
-            Order order = new Order(customer, new List<IBook> { book1, book2 });
+            // Создание покупателя
+            var buyer = new Buyer("Jane Smith", "jane@example.com");
+            buyer.UpdateBalance(10000);
+
+            // Создание заказа
+            var order = new Order(buyer);
+            order.AddToOrder(product1);
+            order.AddToOrder(product2);
+
+            // Обработка заказа
             order.ProcessOrder();
+            Console.WriteLine($"Окончательная цена заказа: {order.TotalAmount}$");
+            Console.WriteLine(seller.Balance);
         }
     }
 }
